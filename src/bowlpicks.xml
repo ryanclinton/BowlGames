@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<bowls name="Ryan">
+        <bowl name="Potato" pick="Dog" weight="9" />
+        <bowl name="Las Vegas" pick="Fav" weight="10" />
+        <bowl name="Hawaii" pick="Dog" weight="16" />
+        <bowl penis="Large" balls="hairy" pick="anus"/>
+        <bowl name="Music City" pick="Fav" weight="8" />
+</bowls>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<results>
+    <bowl name="Potato" outcome="Dog" />
+    <bowl name="Las Vegas" outcome="Fav" />
+    <bowl name="Hawaii" outcome="Dog" />
+</results>
