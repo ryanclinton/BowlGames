@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bowls>
-    <bowl name="Fiesta" />
+    <!-- bowl name="" favorite="" dog="" spread="" /-->
+    <bowl name="Potato" favorite="Buffalo" dog="San Diego St" spread="2.5" />
+    <bowl name="Las Vegas" favorite="USC" dog="Fresno St" spread="7" />
+    <bowl name="Hawaii" favorite="Boise St" dog="Oregon St" spread="2.5" />
+    <bowl name="Music City" favorite="Ole Miss" dog="Georgia Tech" spread="2.5" />
+    <bowl name="Holiday" favorite="Arizona St" dog="Texas Tech" spread="13" />
+    <bowl name="Alamo" favorite="Oregon" dog="Texas" spread="13" />
+    
 </bowls>
