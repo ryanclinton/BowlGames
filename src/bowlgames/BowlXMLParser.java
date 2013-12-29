@@ -84,7 +84,7 @@ public class BowlXMLParser {
         Element e;
         Node n;
         NamedNodeMap nnm;
-        HashMap<String, BowlPick> map = new HashMap();
+        HashMap<String, HashMap<String,BowlPick>> pickTable = new HashMap();
         String attrname;
         String attrval;
         int i, len;
@@ -93,6 +93,11 @@ public class BowlXMLParser {
 
         for (int j = 0; j < len; j++) {
             e = (Element) nl.item(j);
+            String player = e.getParentNode().getAttributes().getNamedItem("name").getNodeValue();
+            if(pickTable.get(player) == null)
+                pickTable.put(player, new HashMap<String, BowlPick>());
+
+            HashMap map = pickTable.get(player);
             nnm = e.getAttributes();
             if (nnm != null && nnm.getLength() > 2) {
                 BowlPick pick;
@@ -124,7 +129,7 @@ public class BowlXMLParser {
                 }
             }
         }
-        return map;
+        return pickTable;
     }
     
     static HashMap buildResultsTable(String url){
@@ -176,19 +181,19 @@ public class BowlXMLParser {
 
         Document doc = getDocument("./src/bowlpicks.xml");
         System.out.println(buildPickTable(doc));
-
-        doc = getDocument("./src/results.xml");
-        HashMap<String, BowlPick> map = buildResultsTable(doc);
-        System.out.println(map);
-       
-        String[] keys = new String[map.size()];
-        map.keySet().toArray(keys);
-        for(String s: keys)
-            System.out.println(s);
-        
-        doc = getDocument("./src/bowls.xml");
-        String[] names = buildBowlsTable(doc);
-        for(String s:names)
-            System.out.println(s);
+//
+//        doc = getDocument("./src/results.xml");
+//        HashMap<String, BowlPick> map = buildResultsTable(doc);
+//        System.out.println(map);
+//       
+//        String[] keys = new String[map.size()];
+//        map.keySet().toArray(keys);
+//        for(String s: keys)
+//            System.out.println(s);
+//        
+//        doc = getDocument("./src/bowls.xml");
+//        String[] names = buildBowlsTable(doc);
+//        for(String s:names)
+//            System.out.println(s);
     }
 }
