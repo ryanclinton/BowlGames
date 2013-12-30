@@ -180,20 +180,20 @@ public class BowlXMLParser {
     public static void main(String[] args) {
 
         Document doc = getDocument("./src/bowlpicks.xml");
-        System.out.println(buildPickTable(doc));
-//
-//        doc = getDocument("./src/results.xml");
-//        HashMap<String, BowlPick> map = buildResultsTable(doc);
-//        System.out.println(map);
-//       
-//        String[] keys = new String[map.size()];
-//        map.keySet().toArray(keys);
-//        for(String s: keys)
-//            System.out.println(s);
-//        
-        doc = getDocument("./src/bowls.xml");
-        String[] names = buildBowlsTable(doc);
-        for(String s:names)
+//        System.out.println(buildPickTable(doc));
+
+        doc = getDocument("./src/results.xml");
+        HashMap<String, BowlPick> map = buildResultsTable(doc);
+        System.out.println(map);
+       
+        String[] keys = new String[map.size()];
+        map.keySet().toArray(keys);
+        for(String s: keys)
             System.out.println(s);
+//        
+//        doc = getDocument("./src/bowls.xml");
+//        String[] names = buildBowlsTable(doc);
+//        for(String s:names)
+//            System.out.println(s);
     }
 }
