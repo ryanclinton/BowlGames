@@ -8,5 +8,19 @@
     <bowl name="Music City" favorite="Ole Miss" dog="Georgia Tech" spread="2.5" />
     <bowl name="Holiday" favorite="Arizona St" dog="Texas Tech" spread="13" />
     <bowl name="Alamo" favorite="Oregon" dog="Texas" spread="13" />
+
+    <bowl name="Sun" favorite="UCLA" dog="Virginia Tech" spread="7" />
+    <bowl name="V100" favorite="Arizona" dog="Boston College" spread="6.5" />
+    <bowl name="Chick-fil-a" favorite="Texas AM" dog="Duke" spread="12.5" />
+    <bowl name="Gator" favorite="Georgia" dog="Nebraska" spread="10" />
+    <bowl name="Outback" favorite="LSU" dog="Iowa" spread="8.5" />
+    <bowl name="Fiesta" favorite="Baylor" dog="UCF" spread="17" />
+    
+    <bowl name="Capital One" favorite="Wisconsin" dog="South Carolina" spread="2" />
+    <bowl name="Rose" favorite="Stanford" dog="Michigan St" spread="3" />
+    <bowl name="Sugar" favorite="Alabama" dog="Oklahoma" spread="14.5" />
+    <bowl name="Cotton" favorite="Missouri" dog="Oklahoma St" spread="1" />
+    <bowl name="Orage" favorite="Ohio St" dog="Clemson" spread="3" />
+    <bowl name="BCS Championship" favorite="Florida St" dog="Auburn" spread="8.5" />
     
 </bowls>
