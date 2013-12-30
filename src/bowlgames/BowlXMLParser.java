@@ -64,10 +64,10 @@ public class BowlXMLParser {
                     attrname = n.getNodeName();
                     attrval = n.getNodeValue();
                     if (attrname.equals("name")) {
-                        bowls[i] = attrval;
+                        bowls[j] = attrval;
                     }
-                    else
-                        System.out.println("No Name in tag...");
+//                    else
+//                        System.out.println("No Name in tag...");
                 }
             }
         }
@@ -191,9 +191,9 @@ public class BowlXMLParser {
 //        for(String s: keys)
 //            System.out.println(s);
 //        
-//        doc = getDocument("./src/bowls.xml");
-//        String[] names = buildBowlsTable(doc);
-//        for(String s:names)
-//            System.out.println(s);
+        doc = getDocument("./src/bowls.xml");
+        String[] names = buildBowlsTable(doc);
+        for(String s:names)
+            System.out.println(s);
     }
 }
