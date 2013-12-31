@@ -4,6 +4,8 @@
  */
 package bowlgames;
 
+import java.util.HashMap;
+
 /**
  * @author Ryan
  */
@@ -48,12 +50,16 @@ public class BowlGames {
     private static int calWins(int outcomes, int predictions){
         return ~(outcomes ^ predictions);
     }
+    private int calcGamesPlayed(HashMap<String, Boolean> outcomes){
+        String[] games = BowlXMLParser.buildBowlsTable("./src/bowls.xml");
+        return 0;
+    }
     
     public static void main (String[] args){      
 //        int gamesPlayed = 0b11100000000000000; //mask of games played
 //        int outcomes    = 0b010000000000000000; //1 if spread was covered
-        int gamesPlayed = 0b111000000000000000; //mask of games played
-        int outcomes    = 0b010001110111011100; //1 if spread was covered
+        int gamesPlayed = 0b111111000000000000; //mask of games played
+        int outcomes    = 0b010101110111011100; //1 if spread was covered
         int bowlGames   = 0b111111111111111111;
         
 //here is where we will start parsing the XML and get the number of players
@@ -106,7 +112,7 @@ public class BowlGames {
         for(Player p : players){
             System.out.print(p.name + " : ");
             int pos = (~gamesPlayed & bowlGames)+1;
-            //System.out.println(p.wins + " / "+pos);
+            System.out.println(p.wins + " / "+pos);
             System.out.println(String.format("%.2f", 100.0 * p.wins / pos)+ "%");
         }
     }
