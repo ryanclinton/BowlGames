@@ -16,4 +16,23 @@ and open the template in the editor.
             <bowl name="Hawaii" pick="Fav" weight="5" />
             <bowl name="Music City" pick="Fav" weight="14" />
     </bowls>
+        <bowls name="Tyler">
+            <bowl name="Potato" pick="Dog" weight="9" />
+            <bowl name="Las Vegas" pick="Fav" weight="10" />
+            <bowl name="Hawaii" pick="Dog" weight="16" />
+            <bowl name="Music City" pick="Fav" weight="8" />
+    </bowls>
+    <bowls name="Colby">
+            <bowl name="Potato" pick="Dog" weight="3" />
+            <bowl name="Las Vegas" pick="Fav" weight="7" />
+            <bowl name="Hawaii" pick="Fav" weight="5" />
+            <bowl name="Music City" pick="Fav" weight="14" />
+    </bowls>
+    <bowls name="Dad">
+            <bowl name="Potato" pick="Dog" weight="9" />
+            <bowl name="Las Vegas" pick="Fav" weight="10" />
+            <bowl name="Hawaii" pick="Dog" weight="16" />
+            <bowl name="Music City" pick="Fav" weight="8" />
+    </bowls>
+    
 </football>

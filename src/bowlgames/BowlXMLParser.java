@@ -38,11 +38,11 @@ public class BowlXMLParser {
         return doc;
     }
     
-    static String[] buildBowlsTable(String url){
+    public static String[] buildBowlsTable(String url){
         Document doc = getDocument(url);
         return buildBowlsTable(doc);
     }
-    static String[] buildBowlsTable(Document doc){
+    public static String[] buildBowlsTable(Document doc){
         NodeList nl = doc.getElementsByTagName("bowl");
         Element e;
         Node n;
@@ -74,12 +74,12 @@ public class BowlXMLParser {
         return bowls;
     }
     
-    static HashMap buildPickTable(String url){
+    public static HashMap buildPickTable(String url){
         Document doc = getDocument(url);
         return buildPickTable(doc);
     }
     
-    static HashMap buildPickTable(Document doc) {
+    public static HashMap buildPickTable(Document doc) {
         NodeList nl = doc.getElementsByTagName("bowl");
         Element e;
         Node n;
@@ -117,7 +117,7 @@ public class BowlXMLParser {
                         pick.cover = attrval.equals("Fav");
                     }
                 }
-                System.out.println(pick);
+                //System.out.println(pick);
                 if (name != null) {
                     if (pick.weight > 0) {
                         map.put(name, pick);
@@ -182,18 +182,18 @@ public class BowlXMLParser {
         Document doc = getDocument("./src/bowlpicks.xml");
 //        System.out.println(buildPickTable(doc));
 
-        doc = getDocument("./src/results.xml");
-        HashMap<String, BowlPick> map = buildResultsTable(doc);
-        System.out.println(map);
-       
-        String[] keys = new String[map.size()];
-        map.keySet().toArray(keys);
-        for(String s: keys)
-            System.out.println(s);
-//        
-//        doc = getDocument("./src/bowls.xml");
-//        String[] names = buildBowlsTable(doc);
-//        for(String s:names)
+//        doc = getDocument("./src/results.xml");
+//        HashMap<String, BowlPick> map = buildResultsTable(doc);
+//        System.out.println(map);
+//       
+//        String[] keys = new String[map.size()];
+//        map.keySet().toArray(keys);
+//        for(String s: keys)
 //            System.out.println(s);
+//        
+        doc = getDocument("./src/bowls.xml");
+        String[] names = buildBowlsTable(doc);
+        for(String s:names)
+            System.out.println(s);
     }
 }
