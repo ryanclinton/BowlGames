@@ -73,7 +73,10 @@ public class BowlXMLParser {
         }
         return bowls;
     }
-    
+    /*
+     * Returns a HashMap<String, HashMap<String,BowlPick>>
+     *  HashMap <playerName, HashMap<bowlName, {cover, weight}>
+     */
     public static HashMap buildPickTable(String url){
         Document doc = getDocument(url);
         return buildPickTable(doc);
@@ -132,6 +135,10 @@ public class BowlXMLParser {
         return pickTable;
     }
     
+    /*
+     * Returns a HashMap<String, Boolean>
+     *  HashMap<bowlName, outcome>
+     */
     static HashMap buildResultsTable(String url){
         Document doc = getDocument(url);
         return buildResultsTable(doc);

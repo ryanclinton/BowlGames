@@ -57,35 +57,81 @@ public class BowlGames {
         Boolean outcome;
         for (int i = 0; i < games.length; i++) {
             outcome = outcomes.get(games[i]);
-
         }
         return 0;
     }
-
+    public static int GamesPlayed(HashMap<String, Boolean> outcomes){
+        int gamesPlayed = 0;
+        int bowlGames = 18;
+        int played = outcomes.size();
+        
+        for (int i = 0; i < played; i++) {
+            gamesPlayed = ((1 << i) | gamesPlayed);
+        }
+        gamesPlayed = gamesPlayed << (bowlGames-played);
+        return gamesPlayed;
+    }
+    
     public static void main(String[] args) {
 //        int gamesPlayed = 0b11111110000000000; //mask of games played
 //        int outcomes    = 0b010000000000000000; //1 if spread was covered
-        int gamesPlayed = 0b111111111000000000; //mask of games played
-        int outcomes =    0b010101110111011100; //1 if spread was covered
+//        int gamesPlayed = 0b111111111000000000; //mask of games played
+        int gamesPlayed = 0;
+//        int outcomes =    0b010101110111011100; //1 if spread was covered
+        int outcomes = 0;
         int bowlGames = 0b111111111111111111;
-
+        
 //here is where we will start parsing the XML and get the number of players
-
         //read XML and populate the data objects
         HashMap<String, HashMap<String,BowlPick>> picksMap = BowlXMLParser.buildPickTable("./src/bowlpicks.xml");
         HashMap<String, Boolean> resultsMap = BowlXMLParser.buildResultsTable("./src/results.xml");
         String[] bowls = BowlXMLParser.buildBowlsTable("./src/bowls.xml");
-        
+
         String[] playerNames = new String[picksMap.size()];
         picksMap.keySet().toArray(playerNames);
         HashMap<String, Player> players = new HashMap();
         
+        //calculate gamesPlayed mask
+        for (int i = 0; i < resultsMap.size(); i++) {
+            gamesPlayed = ((1 << i) | gamesPlayed);
+        }
+        gamesPlayed = gamesPlayed << (bowls.length - resultsMap.size());
+        //done calculating mask
+        
+        //calculate outcomes
+        for (int i = 0; i < bowls.length; i++) {
+            if(resultsMap.get(bowls[i]) != null){
+                if(resultsMap.get(bowls[i]).booleanValue())
+                    outcomes = ((outcomes << 1) | 1);
+                else
+                    outcomes = (outcomes << 1) ;
+            }
+        }
+        outcomes = outcomes << (bowls.length - resultsMap.size());
+        //done calculating outcomes
+        
+        //create all the players
         for (int i = 0; i < playerNames.length; i++) {
-            Player player = new Player();
-           
+            Player player = new Player();   
             players.put(playerNames[i], player);
         }
-
+        //done creating players
+        
+        //calculate picks
+        for (Entry<String, HashMap<String,BowlPick>> player : picksMap.entrySet()){
+            int picks = 0;
+            for (int i = 0; i < bowls.length; i++) {
+                if(player.getValue() != null && player.getValue().get(bowls[i]) != null){
+                    if(player.getValue().get(bowls[i]).cover)
+                        picks = ((picks << 1) | 1);
+                    else
+                        picks = (picks << 1) ;
+                }
+            }
+            players.get(player.getKey()).picks = picks;
+        }
+        //done calculating picks
+        
         players.get("Kyle").picks = KylePicks;
         players.get("Ryan").picks = RyanPicks;
         players.get("Tyler").picks = TylerPicks;

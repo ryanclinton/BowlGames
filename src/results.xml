@@ -7,6 +7,6 @@ and open the template in the editor.
 
 <results>
     <bowl name="Potato" outcome="Dog" />
-    <bowl name="Las Vegas" outcome="Fav" />
-    <bowl name="Hawaii" outcome="Dog" />
+    <bowl name="Las Vegas" outcome="Dog" />
+    <bowl name="Hawaii" outcome="Fav" />
 </results>
