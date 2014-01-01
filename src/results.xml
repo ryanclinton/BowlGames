@@ -9,4 +9,22 @@ and open the template in the editor.
     <bowl name="Potato" outcome="Dog" />
     <bowl name="Las Vegas" outcome="Dog" />
     <bowl name="Hawaii" outcome="Fav" />
+    <bowl name="Music City" outcome="" />
+    <bowl name="Holiday" outcome="" />
+    <bowl name="Alamo" outcome="" />
+
+    <bowl name="Sun" outcome="" />
+    <bowl name="V100" outcome="" />
+    <bowl name="Chick-fil-a" outcome="" />
+    <bowl name="Gator" outcome="" />
+    <bowl name="Outback" outcome="" />
+    <bowl name="Fiesta" outcome="" />
+    
+    <bowl name="Capital One" outcome="" />
+    <bowl name="Rose" outcome="" />
+    <bowl name="Sugar" outcome="" />
+    <bowl name="Cotton" outcome="" />
+    <bowl name="Orage" outcome="" />
+    <bowl name="BCS Championship" outcome="" />
+
 </results>
