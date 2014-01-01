@@ -21,11 +21,11 @@ class Player {
 
 public class BowlGames {
 
-    private static final int KylePicks =  0b010011111111010000;
-    private static final int RyanPicks =  0b000001111100011011;  //read left to right
-    private static final int TylerPicks = 0b000111110011000110;
-    private static final int ColbyPicks = 0b000101110010011011;
-    private static final int DadPicks =   0b010111111011101101;
+//    private static final int KylePicks =  0b010011111111010000;
+//    private static final int RyanPicks =  0b000001111100011011;  //read left to right
+//    private static final int TylerPicks = 0b000111110011000110;
+//    private static final int ColbyPicks = 0b000101110010011011;
+//    private static final int DadPicks =   0b010111111011101101;
 
     private static final int[] KylePoints = {18, 12, 9, 10, 16, 15, 11, 14, 8, 13, 1, 17, 5, 2, 6, 3, 7, 4};
     private static final int[] RyanPoints = {16, 12, 2, 15, 18, 6, 8, 13, 1, 14, 5, 17, 9, 11, 4, 7, 10, 3}; //read right to left
@@ -51,15 +51,6 @@ public class BowlGames {
         return ~(outcomes ^ predictions);
     }
 
-    private int calcGamesPlayed(HashMap<String, Boolean> outcomes) {
-        int played = 0; 
-        String[] games = BowlXMLParser.buildBowlsTable("./src/bowls.xml");
-        Boolean outcome;
-        for (int i = 0; i < games.length; i++) {
-            outcome = outcomes.get(games[i]);
-        }
-        return 0;
-    }
     public static int GamesPlayed(HashMap<String, Boolean> outcomes){
         int gamesPlayed = 0;
         int bowlGames = 18;
@@ -121,7 +112,7 @@ public class BowlGames {
         for (Entry<String, HashMap<String,BowlPick>> player : picksMap.entrySet()){
             int picks = 0;
             for (int i = 0; i < bowls.length; i++) {
-                if(player.getValue() != null && player.getValue().get(bowls[i]) != null){
+                if(player.getValue().get(bowls[i]) != null){
                     if(player.getValue().get(bowls[i]).cover)
                         picks = ((picks << 1) | 1);
                     else
@@ -132,11 +123,11 @@ public class BowlGames {
         }
         //done calculating picks
         
-        players.get("Kyle").picks = KylePicks;
-        players.get("Ryan").picks = RyanPicks;
-        players.get("Tyler").picks = TylerPicks;
-        players.get("Colby").picks = ColbyPicks;
-        players.get("Dad").picks = DadPicks;
+       // players.get("Kyle").picks = KylePicks;
+       // players.get("Ryan").picks = RyanPicks;
+       // players.get("Tyler").picks = TylerPicks;
+       // players.get("Colby").picks = ColbyPicks;
+       // players.get("Dad").picks = DadPicks;
 
         players.get("Kyle").points = KylePoints;
         players.get("Ryan").points = RyanPoints;
