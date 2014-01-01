@@ -114,7 +114,7 @@ and open the template in the editor.
         <bowl name="Sugar" pick="Fav" weight="" />
         <bowl name="Cotton" pick="Fav" weight="" />
         <bowl name="Orage" pick="" weight="" />
-        <bowl name="BCS Championship" pick="Fav" weight="" />
+        <bowl name="BCS Championship" pick="" weight="" />
     </bowls>
     
 </football>

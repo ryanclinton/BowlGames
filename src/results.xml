@@ -15,13 +15,13 @@ and open the template in the editor.
 
     <bowl name="Sun" outcome="Fav" />
     <bowl name="V100" outcome="Fav" />
-    <!--bowl name="Chick-fil-a" outcome="" />
-    <bowl name="Gator" outcome="" />
-    <bowl name="Outback" outcome="" />
-    <bowl name="Fiesta" outcome="" />
+    <bowl name="Chick-fil-a" outcome="Dog" />
+    <bowl name="Gator" outcome="Dog" />
+    <bowl name="Outback" outcome="Dog" />
+    <!--bowl name="Fiesta" outcome="" /-->
     
-    <bowl name="Capital One" outcome="" />
-    <bowl name="Rose" outcome="" />
+    <bowl name="Capital One" outcome="Dog" />
+    <!--bowl name="Rose" outcome="" />
     <bowl name="Sugar" outcome="" />
     <bowl name="Cotton" outcome="" />
     <bowl name="Orage" outcome="" />
