@@ -70,8 +70,8 @@ public class BowlGames {
     public static void main(String[] args) {
 //        int gamesPlayed = 0b11111110000000000; //mask of games played
 //        int outcomes    = 0b010000000000000000; //1 if spread was covered
-        int gamesPlayed = 0b111111111000000000; //mask of games played
-        int outcomes =    0b010101111111011100; //1 if spread was covered
+        int gamesPlayed = 0b111111111110000000; //mask of games played
+        int outcomes =    0b010101110001011100; //1 if spread was covered
         int bowlGames = 0b111111111111111111;
 
 //here is where we will start parsing the XML and get the number of players
