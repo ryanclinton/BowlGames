@@ -11,21 +11,13 @@ import java.util.Map.Entry;
  * @author Ryan
  */
 class Player {
-
     int picks;
     int[] points;
-    //String name;
     int wins = 0;
     int score = 0; //temp holder for any given outcome
 }
 
 public class BowlGames {
-
-//    private static final int KylePicks =  0b010011111111010000;
-//    private static final int RyanPicks =  0b000001111100011011;  //read left to right
-//    private static final int TylerPicks = 0b000111110011000110;
-//    private static final int ColbyPicks = 0b000101110010011011;
-//    private static final int DadPicks =   0b010111111011101101;
 
     private static final int[] KylePoints = {18, 12, 9, 10, 16, 15, 11, 14, 8, 13, 1, 17, 5, 2, 6, 3, 7, 4};
     private static final int[] RyanPoints = {16, 12, 2, 15, 18, 6, 8, 13, 1, 14, 5, 17, 9, 11, 4, 7, 10, 3}; //read right to left
@@ -64,11 +56,7 @@ public class BowlGames {
     }
     
     public static void main(String[] args) {
-//        int gamesPlayed = 0b11111110000000000; //mask of games played
-//        int outcomes    = 0b010000000000000000; //1 if spread was covered
-//        int gamesPlayed = 0b111111111000000000; //mask of games played
         int gamesPlayed = 0;
-//        int outcomes =    0b010101110111011100; //1 if spread was covered
         int outcomes = 0;
         int bowlGames = 0b111111111111111111;
         
@@ -77,6 +65,7 @@ public class BowlGames {
         HashMap<String, HashMap<String,BowlPick>> picksMap = BowlXMLParser.buildPickTable("./src/bowlpicks.xml");
         HashMap<String, Boolean> resultsMap = BowlXMLParser.buildResultsTable("./src/results.xml");
         String[] bowls = BowlXMLParser.buildBowlsTable("./src/bowls.xml");
+//done with XML
 
         String[] playerNames = new String[picksMap.size()];
         picksMap.keySet().toArray(playerNames);
@@ -123,23 +112,13 @@ public class BowlGames {
         }
         //done calculating picks
         
-       // players.get("Kyle").picks = KylePicks;
-       // players.get("Ryan").picks = RyanPicks;
-       // players.get("Tyler").picks = TylerPicks;
-       // players.get("Colby").picks = ColbyPicks;
-       // players.get("Dad").picks = DadPicks;
-
         players.get("Kyle").points = KylePoints;
         players.get("Ryan").points = RyanPoints;
         players.get("Tyler").points = TylerPoints;
         players.get("Colby").points = ColbyPoints;
         players.get("Dad").points = DadPoints;
-//done with XML
-        for (Entry<String, Player> entry : players.entrySet()){
-            entry.getValue().score = 0;
-            entry.getValue().wins = 0;
-        }
-        
+
+     
         for (int i = 0; i <= (~gamesPlayed & bowlGames); i++) {
             int max = 0;
 

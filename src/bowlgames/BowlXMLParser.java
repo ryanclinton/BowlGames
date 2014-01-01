@@ -185,7 +185,7 @@ public class BowlXMLParser {
         return map;
     }
 
-    //test
+//test some stuff
     public static void main(String[] args) {
 
         Document doc = getDocument("./src/bowlpicks.xml");
