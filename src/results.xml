@@ -7,15 +7,15 @@ and open the template in the editor.
 
 <results>
     <bowl name="Potato" outcome="Dog" />
-    <bowl name="Las Vegas" outcome="Dog" />
-    <bowl name="Hawaii" outcome="Fav" />
-    <bowl name="Music City" outcome="" />
-    <bowl name="Holiday" outcome="" />
-    <bowl name="Alamo" outcome="" />
+    <bowl name="Las Vegas" outcome="Fav" />
+    <bowl name="Hawaii" outcome="Dog" />
+    <bowl name="Music City" outcome="Fav" />
+    <bowl name="Holiday" outcome="D" />
+    <bowl name="Alamo" outcome="Fav" />
 
-    <bowl name="Sun" outcome="" />
-    <bowl name="V100" outcome="" />
-    <bowl name="Chick-fil-a" outcome="" />
+    <bowl name="Sun" outcome="Fav" />
+    <bowl name="V100" outcome="Fav" />
+    <!--bowl name="Chick-fil-a" outcome="" />
     <bowl name="Gator" outcome="" />
     <bowl name="Outback" outcome="" />
     <bowl name="Fiesta" outcome="" />
@@ -25,6 +25,6 @@ and open the template in the editor.
     <bowl name="Sugar" outcome="" />
     <bowl name="Cotton" outcome="" />
     <bowl name="Orage" outcome="" />
-    <bowl name="BCS Championship" outcome="" />
+    <bowl name="BCS Championship" outcome="" /-->
 
 </results>

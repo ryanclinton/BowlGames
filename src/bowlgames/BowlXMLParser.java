@@ -114,7 +114,8 @@ public class BowlXMLParser {
                         name = attrval;
                     }
                     if (attrname.equals("weight")) {
-                        pick.weight = Integer.parseInt(attrval);
+                        if(!attrval.equals(""))
+                            pick.weight = Integer.parseInt(attrval);
                     }
                     if (attrname.equals("pick")) {
                         pick.cover = attrval.equals("Fav");
@@ -125,7 +126,8 @@ public class BowlXMLParser {
                     if (pick.weight > 0) {
                         map.put(name, pick);
                     } else {
-                        System.out.println("No weight assigned. Skipping entry!");
+                        System.out.println("Weight not valid. Assigning 0!");
+                        map.put(name, pick);
                     }
                 } else {
                     System.out.println("No bowl name entered. Skipping entry!");
@@ -187,7 +189,7 @@ public class BowlXMLParser {
     public static void main(String[] args) {
 
         Document doc = getDocument("./src/bowlpicks.xml");
-//        System.out.println(buildPickTable(doc));
+        System.out.println(buildPickTable(doc));
 
 //        doc = getDocument("./src/results.xml");
 //        HashMap<String, BowlPick> map = buildResultsTable(doc);
@@ -198,9 +200,9 @@ public class BowlXMLParser {
 //        for(String s: keys)
 //            System.out.println(s);
 //        
-        doc = getDocument("./src/bowls.xml");
-        String[] names = buildBowlsTable(doc);
-        for(String s:names)
-            System.out.println(s);
+//        doc = getDocument("./src/bowls.xml");
+//        String[] names = buildBowlsTable(doc);
+//        for(String s:names)
+//            System.out.println(s);
     }
 }
