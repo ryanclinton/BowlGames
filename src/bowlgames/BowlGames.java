@@ -19,12 +19,6 @@ class Player {
 
 public class BowlGames {
 
-//    private static final int[] KylePoints = {18, 12, 9, 10, 16, 15, 11, 14, 8, 13, 1, 17, 5, 2, 6, 3, 7, 4};
-//    private static final int[] RyanPoints = {16, 12, 2, 15, 18, 6, 8, 13, 1, 14, 5, 17, 9, 11, 4, 7, 10, 3}; //read right to left
-//    private static final int[] TylerPoints = {15, 8, 4, 14, 7, 16, 6, 1, 17, 3, 10, 5, 9, 18, 11, 12, 2, 13};
-//    private static final int[] ColbyPoints = {2, 17, 1, 3, 11, 18, 12, 10, 4, 13, 8, 14, 9, 7, 6, 16, 5, 15};
-//    private static final int[] DadPoints = {7, 12, 4, 13, 11, 3, 2, 6, 1, 14, 17, 15, 18, 5, 8, 16, 10, 9};
-
     private static final int[] tieMask   = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     
     private static int calcTotal(int wins, int[] bets) {
@@ -39,13 +33,6 @@ public class BowlGames {
         return total;
     }
 
-//    private static int[] getPoints(HashMap<String, BowlPick> map, String[] bowls){
-//        int points[] = new int[bowls.length];
-//        for(int i=0; i<bowls.length; i++)
-//            points[i] = map.get(bowls[bowls.length - 1 - i]).weight;
-//        return points;
-//    }
-    
     private static int calWins(int outcomes, int predictions) {
         return ~(outcomes ^ predictions);
     }
@@ -124,13 +111,7 @@ public class BowlGames {
             players.get(player.getKey()).points = points;
         }
         //done calculating picks
-        //int[] pts = getPoints(picksMap.get("Ryan"),bowls);
-//        players.get("Kyle").points = KylePoints;
-//        players.get("Ryan").points = RyanPoints;
-//        players.get("Tyler").points = TylerPoints;
-//        players.get("Colby").points = ColbyPoints;
-//        players.get("Dad").points = DadPoints;
-//     
+
         for (int i = 0; i <= (~gamesPlayed & bowlGames); i++) {
             int max = 0;
 
