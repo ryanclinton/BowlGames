@@ -190,10 +190,10 @@ public class BowlXMLParser {
         map.keySet().toArray(keys);
         for(String s: keys)
             System.out.println(s);
-        
-        doc = getDocument("./src/bowls.xml");
-        String[] names = buildBowlsTable(doc);
-        for(String s:names)
-            System.out.println(s);
+//        
+//        doc = getDocument("./src/bowls.xml");
+//        String[] names = buildBowlsTable(doc);
+//        for(String s:names)
+//            System.out.println(s);
     }
 }
