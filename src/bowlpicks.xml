@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <football>
-    <bowls name="Ryan">{16, 12, 2, 15, 18, 6, 8, 13, 1, 14, 5, 17, 9, 11, 4, 7, 10, 3}
+    <bowls name="Ryan">
         <bowl name="Potato" pick="Dog" weight="3" />
         <bowl name="Las Vegas" pick="Dog" weight="10" />
         <bowl name="Hawaii" pick="Dog" weight="7" />
@@ -26,8 +22,7 @@ and open the template in the editor.
         <bowl name="Orage" pick="Fav" weight="12" />
         <bowl name="BCS Championship" pick="Fav" weight="16" />
     </bowls>
-    
-    <bowls name="Kyle">{18, 12, 9, 10, 16, 15, 11, 14, 8, 13, 1, 17, 5, 2, 6, 3, 7, 4}
+    <bowls name="Kyle">
         <bowl name="Potato" pick="Dog" weight="4" />
         <bowl name="Las Vegas" pick="Fav" weight="7" />
         <bowl name="Hawaii" pick="Dog" weight="3" />
@@ -49,7 +44,7 @@ and open the template in the editor.
         <bowl name="Orage" pick="Dog" weight="12" />
         <bowl name="BCS Championship" pick="Dog" weight="18" />
     </bowls>
-    <bowls name="Tyler">{15, 8, 4, 14, 7, 16, 6, 1, 17, 3, 10, 5, 9, 18, 11, 12, 2, 13}
+    <bowls name="Tyler">
         <bowl name="Potato" pick="Dog" weight="13" />
         <bowl name="Las Vegas" pick="Dog" weight="2" />
         <bowl name="Hawaii" pick="Dog" weight="12" />
@@ -70,9 +65,8 @@ and open the template in the editor.
         <bowl name="Cotton" pick="Fav" weight="4" />
         <bowl name="Orage" pick="Fav" weight="8" />
         <bowl name="BCS Championship" pick="Dog" weight="15" />
-    
     </bowls>
-    <bowls name="Colby">{2, 17, 1, 3, 11, 18,      12, 10, 4, 13, 8, 14,     9, 7, 6, 16, 5, 15}
+    <bowls name="Colby">
         <bowl name="Potato" pick="Dog" weight="15" />
         <bowl name="Las Vegas" pick="" weight="5" />
         <bowl name="Hawaii" pick="" weight="16" />
@@ -94,7 +88,7 @@ and open the template in the editor.
         <bowl name="Orage" pick="Fav" weight="17" />
         <bowl name="BCS Championship" pick="Fav" weight="2" />
     </bowls>
-    <bowls name="Dad">{7, 12, 4, 13, 11, 3,       2, 6, 1, 14, 17, 15,       18, 5, 8, 16, 10, 9}
+    <bowls name="Dad">
         <bowl name="Potato" pick="Dog" weight="9" />
         <bowl name="Las Vegas" pick="Fav" weight="10" />
         <bowl name="Hawaii" pick="" weight="16" />
@@ -116,5 +110,4 @@ and open the template in the editor.
         <bowl name="Orage" pick="" weight="12" />
         <bowl name="BCS Championship" pick="Fav" weight="7" />
     </bowls>
-    
 </football>
