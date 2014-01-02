@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-
-
 <results>
-    <bowl name="Potato" outcome="Dog" />
+    <!--bowl name="" outcome="" /-->
+    <!--bowl name="Potato" outcome="Dog" />
     <bowl name="Las Vegas" outcome="Fav" />
     <bowl name="Hawaii" outcome="Dog" />
+    <bowl name="Music City" outcome="Fav" />
+    <bowl name="Holiday" outcome="D" />
+    <bowl name="Alamo" outcome="Fav" />
+
+    <bowl name="Sun" outcome="Fav" />
+    <bowl name="V100" outcome="Fav" />
+    <bowl name="Chick-fil-a" outcome="Dog" />
+    <bowl name="Gator" outcome="Dog" />
+    <bowl name="Outback" outcome="Dog" />
+    <bowl name="Fiesta" outcome="Fav" />
+    
+    <bowl name="Capital One" outcome="Dog" />
+    <bowl name="Rose" outcome="Fav" />
+    <bowl name="Sugar" outcome="" />
+    <bowl name="Cotton" outcome="" />
+    <bowl name="Orage" outcome="" />
+    <bowl name="BCS Championship" outcome="" /-->
+
 </results>

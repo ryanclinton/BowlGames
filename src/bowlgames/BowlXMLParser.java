@@ -73,13 +73,16 @@ public class BowlXMLParser {
         }
         return bowls;
     }
-    
-    static HashMap buildPickTable(String url){
+    /*
+     * Returns a HashMap<String, HashMap<String,BowlPick>>
+     *  HashMap <playerName, HashMap<bowlName, {cover, weight}>
+     */
+    public static HashMap buildPickTable(String url){
         Document doc = getDocument(url);
         return buildPickTable(doc);
     }
     
-    static HashMap buildPickTable(Document doc) {
+    public static HashMap buildPickTable(Document doc) {
         NodeList nl = doc.getElementsByTagName("bowl");
         Element e;
         Node n;
@@ -111,18 +114,20 @@ public class BowlXMLParser {
                         name = attrval;
                     }
                     if (attrname.equals("weight")) {
-                        pick.weight = Integer.parseInt(attrval);
+                        if(!attrval.equals(""))
+                            pick.weight = Integer.parseInt(attrval);
                     }
                     if (attrname.equals("pick")) {
                         pick.cover = attrval.equals("Fav");
                     }
                 }
-                System.out.println(pick);
+                //System.out.println(pick);
                 if (name != null) {
                     if (pick.weight > 0) {
                         map.put(name, pick);
                     } else {
-                        System.out.println("No weight assigned. Skipping entry!");
+                        System.out.println("Weight not valid. Assigning 0!");
+                        map.put(name, pick);
                     }
                 } else {
                     System.out.println("No bowl name entered. Skipping entry!");
@@ -132,6 +137,10 @@ public class BowlXMLParser {
         return pickTable;
     }
     
+    /*
+     * Returns a HashMap<String, Boolean>
+     *  HashMap<bowlName, outcome>
+     */
     static HashMap buildResultsTable(String url){
         Document doc = getDocument(url);
         return buildResultsTable(doc);
@@ -176,20 +185,20 @@ public class BowlXMLParser {
         return map;
     }
 
-    //test
+//test some stuff
     public static void main(String[] args) {
 
         Document doc = getDocument("./src/bowlpicks.xml");
-//        System.out.println(buildPickTable(doc));
+        System.out.println(buildPickTable(doc));
 
-        doc = getDocument("./src/results.xml");
-        HashMap<String, BowlPick> map = buildResultsTable(doc);
-        System.out.println(map);
-       
-        String[] keys = new String[map.size()];
-        map.keySet().toArray(keys);
-        for(String s: keys)
-            System.out.println(s);
+//        doc = getDocument("./src/results.xml");
+//        HashMap<String, BowlPick> map = buildResultsTable(doc);
+//        System.out.println(map);
+//       
+//        String[] keys = new String[map.size()];
+//        map.keySet().toArray(keys);
+//        for(String s: keys)
+//            System.out.println(s);
 //        
 //        doc = getDocument("./src/bowls.xml");
 //        String[] names = buildBowlsTable(doc);
