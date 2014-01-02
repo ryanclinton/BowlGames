@@ -38,11 +38,11 @@ public class BowlXMLParser {
         return doc;
     }
     
-    static String[] buildBowlsTable(String url){
+    public static String[] buildBowlsTable(String url){
         Document doc = getDocument(url);
         return buildBowlsTable(doc);
     }
-    static String[] buildBowlsTable(Document doc){
+    public static String[] buildBowlsTable(Document doc){
         NodeList nl = doc.getElementsByTagName("bowl");
         Element e;
         Node n;
@@ -190,10 +190,10 @@ public class BowlXMLParser {
         map.keySet().toArray(keys);
         for(String s: keys)
             System.out.println(s);
-//        
-//        doc = getDocument("./src/bowls.xml");
-//        String[] names = buildBowlsTable(doc);
-//        for(String s:names)
-//            System.out.println(s);
+        
+        doc = getDocument("./src/bowls.xml");
+        String[] names = buildBowlsTable(doc);
+        for(String s:names)
+            System.out.println(s);
     }
 }
