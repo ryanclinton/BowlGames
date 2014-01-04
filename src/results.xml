@@ -17,9 +17,9 @@
     
     <bowl name="Capital One" outcome="Dog" />
     <bowl name="Rose" outcome="Dog" />
-    <bowl name="Sugar" outcome="Dog" />
-    <!--bowl name="Cotton" outcome="" />
-    <bowl name="Orage" outcome="" />
-    <bowl name="BCS Championship" outcome="" /-->
+    <bowl name="Sugar" outcome="Fav" />
+    <bowl name="Cotton" outcome="Fav" />
+    <bowl name="Orage" outcome="Dog" />
+    <!--bowl name="BCS Championship" outcome="Dog" /-->
 
 </results>
