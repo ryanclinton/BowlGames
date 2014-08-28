@@ -10,12 +10,7 @@ import java.util.Map.Entry;
 /**
  * @author Ryan
  */
-//class Player {
-//    int picks;
-//    int[] points;
-//    int wins = 0;
-//    int score = 0; //temp holder for any given outcome
-//}
+
 
 public class BowlGames {
 
