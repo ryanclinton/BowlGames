@@ -1,19 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <football>
     <bowls name="Ryan">
-            <bowl name="Potato" pick="Dog" weight="9" />
-            <bowl name="Las Vegas" pick="Fav" weight="10" />
-            <bowl name="Hawaii" pick="Dog" weight="16" />
-            <bowl name="Music City" pick="Fav" weight="8" />
+        <bowl name="Potato" pick="Dog" weight="3" />
+        <bowl name="Las Vegas" pick="Dog" weight="10" />
+        <bowl name="Hawaii" pick="Dog" weight="7" />
+        <bowl name="Music City" pick="Dog" weight="4" />
+        <bowl name="Holiday" pick="Dog" weight="11" />
+        <bowl name="Alamo" pick="Fav" weight="9" />
+
+        <bowl name="Sun" pick="Fav" weight="17" />
+        <bowl name="V100" pick="Fav" weight="5" />
+        <bowl name="Chick-fil-a" pick="Fav" weight="14" />
+        <bowl name="Gator" pick="Fav" weight="1" />
+        <bowl name="Outback" pick="Dog" weight="13" />
+        <bowl name="Fiesta" pick="Dog" weight="8" />
+
+        <bowl name="Capital One" pick="Dog" weight="6" />
+        <bowl name="Rose" pick="Fav" weight="18" />
+        <bowl name="Sugar" pick="Fav" weight="15" />
+        <bowl name="Cotton" pick="Dog" weight="2" />
+        <bowl name="Orage" pick="Fav" weight="12" />
+        <bowl name="BCS Championship" pick="Fav" weight="16" />
     </bowls>
     <bowls name="Kyle">
-            <bowl name="Potato" pick="Dog" weight="3" />
-            <bowl name="Las Vegas" pick="Fav" weight="7" />
-            <bowl name="Hawaii" pick="Fav" weight="5" />
-            <bowl name="Music City" pick="Fav" weight="14" />
+        <bowl name="Potato" pick="Dog" weight="4" />
+        <bowl name="Las Vegas" pick="Fav" weight="7" />
+        <bowl name="Hawaii" pick="Dog" weight="3" />
+        <bowl name="Music City" pick="Dog" weight="6" />
+        <bowl name="Holiday" pick="Fav" weight="2" />
+        <bowl name="Alamo" pick="Fav" weight="5" />
+
+        <bowl name="Sun" pick="Fav" weight="17" />
+        <bowl name="V100" pick="Fav" weight="1" />
+        <bowl name="Chick-fil-a" pick="Fav" weight="13" />
+        <bowl name="Gator" pick="Fav" weight="8" />
+        <bowl name="Outback" pick="Fav" weight="14" />
+        <bowl name="Fiesta" pick="Fav" weight="11" />
+
+        <bowl name="Capital One" pick="Dog" weight="15" />
+        <bowl name="Rose" pick="Fav" weight="16" />
+        <bowl name="Sugar" pick="Dog" weight="10" />
+        <bowl name="Cotton" pick="Dog" weight="9" />
+        <bowl name="Orage" pick="Dog" weight="12" />
+        <bowl name="BCS Championship" pick="Dog" weight="18" />
+    </bowls>
+    <bowls name="Tyler">
+        <bowl name="Potato" pick="Dog" weight="13" />
+        <bowl name="Las Vegas" pick="Dog" weight="2" />
+        <bowl name="Hawaii" pick="Dog" weight="12" />
+        <bowl name="Music City" pick="Fav" weight="11" />
+        <bowl name="Holiday" pick="Fav" weight="18" />
+        <bowl name="Alamo" pick="Fav" weight="9" />
+
+        <bowl name="Sun" pick="Fav" weight="5" />
+        <bowl name="V100" pick="Fav" weight="10" />
+        <bowl name="Chick-fil-a" pick="Dog" weight="3" />
+        <bowl name="Gator" pick="Dog" weight="17" />
+        <bowl name="Outback" pick="Fav" weight="1" />
+        <bowl name="Fiesta" pick="Fav" weight="6" />
+    
+        <bowl name="Capital One" pick="Dog" weight="16" />
+        <bowl name="Rose" pick="Dog" weight="7" />
+        <bowl name="Sugar" pick="Dog" weight="14" />
+        <bowl name="Cotton" pick="Fav" weight="4" />
+        <bowl name="Orage" pick="Fav" weight="8" />
+        <bowl name="BCS Championship" pick="Dog" weight="15" />
+    </bowls>
+    <bowls name="Colby">
+        <bowl name="Potato" pick="Dog" weight="15" />
+        <bowl name="Las Vegas" pick="" weight="5" />
+        <bowl name="Hawaii" pick="" weight="16" />
+        <bowl name="Music City" pick="Fav" weight="6" />
+        <bowl name="Holiday" pick="" weight="7" />
+        <bowl name="Alamo" pick="Fav" weight="9" />
+
+        <bowl name="Sun" pick="Fav" weight="14" />
+        <bowl name="V100" pick="Fav" weight="8" />
+        <bowl name="Chick-fil-a" pick="" weight="13" />
+        <bowl name="Gator" pick="" weight="4" />
+        <bowl name="Outback" pick="Fav" weight="10" />
+        <bowl name="Fiesta" pick="" weight="12" />
+    
+        <bowl name="Capital One" pick="" weight="18" />
+        <bowl name="Rose" pick="Fav" weight="11" />
+        <bowl name="Sugar" pick="Fav" weight="3" />
+        <bowl name="Cotton" pick="" weight="1" />
+        <bowl name="Orage" pick="Fav" weight="17" />
+        <bowl name="BCS Championship" pick="Fav" weight="2" />
+    </bowls>
+    <bowls name="Dad">
+        <bowl name="Potato" pick="Dog" weight="9" />
+        <bowl name="Las Vegas" pick="Fav" weight="10" />
+        <bowl name="Hawaii" pick="" weight="16" />
+        <bowl name="Music City" pick="Fav" weight="8" />
+        <bowl name="Holiday" pick="Fav" weight="5" />
+        <bowl name="Alamo" pick="Fav" weight="18" />
+
+        <bowl name="Sun" pick="Fav" weight="15" />
+        <bowl name="V100" pick="Fav" weight="17" />
+        <bowl name="Chick-fil-a" pick="Fav" weight="14" />
+        <bowl name="Gator" pick="" weight="1" />
+        <bowl name="Outback" pick="Fav" weight="6" />
+        <bowl name="Fiesta" pick="Fav" weight="2" />
+    
+        <bowl name="Capital One" pick="Fav" weight="3" />
+        <bowl name="Rose" pick="" weight="11" />
+        <bowl name="Sugar" pick="Fav" weight="13" />
+        <bowl name="Cotton" pick="Fav" weight="4" />
+        <bowl name="Orage" pick="" weight="12" />
+        <bowl name="BCS Championship" pick="Fav" weight="7" />
     </bowls>
 </football>
