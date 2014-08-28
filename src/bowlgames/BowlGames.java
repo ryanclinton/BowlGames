@@ -5,38 +5,19 @@
 package bowlgames;
 
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 /**
  * @author Ryan
  */
 class Player {
-
     int picks;
     int[] points;
-    String name;
     int wins = 0;
     int score = 0; //temp holder for any given outcome
 }
 
 public class BowlGames {
-
-    private static final int Kyle = 0;
-    private static final int Ryan = 1;
-    private static final int Tyler = 2;
-    private static final int Colby = 3;
-    private static final int Dad = 4;
-
-    private static final int KylePicks =  0b010011111111010000;
-    private static final int RyanPicks =  0b000001111100011011;  //read left to right
-    private static final int TylerPicks = 0b000111110011000110;
-    private static final int ColbyPicks = 0b000101110010011011;
-    private static final int DadPicks =   0b010111111011101101;
-
-    private static final int[] KylePoints = {18, 12, 9, 10, 16, 15, 11, 14, 8, 13, 1, 17, 5, 2, 6, 3, 7, 4};
-    private static final int[] RyanPoints = {16, 12, 2, 15, 18, 6, 8, 13, 1, 14, 5, 17, 9, 11, 4, 7, 10, 3}; //read right to left
-    private static final int[] TylerPoints = {15, 8, 4, 14, 7, 16, 6, 1, 17, 3, 10, 5, 9, 18, 11, 12, 2, 13};
-    private static final int[] ColbyPoints = {2, 17, 1, 3, 11, 18, 12, 10, 4, 13, 8, 14, 9, 7, 6, 16, 5, 15};
-    private static final int[] DadPoints = {7, 12, 4, 13, 11, 3, 2, 6, 1, 14, 17, 15, 18, 5, 8, 16, 10, 9};
 
     private static final int[] tieMask   = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     
