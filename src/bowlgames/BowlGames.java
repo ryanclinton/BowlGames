@@ -37,79 +37,114 @@ public class BowlGames {
         return ~(outcomes ^ predictions);
     }
 
-    private int calcGamesPlayed(HashMap<String, Boolean> outcomes) {
-        int played = 0; 
-        String[] games = BowlXMLParser.buildBowlsTable("./src/bowls.xml");
-        Boolean outcome;
-        for (int i = 0; i < games.length; i++) {
-            outcome = outcomes.get(games[i]);
-
+    public static int GamesPlayed(HashMap<String, Boolean> outcomes){
+        int gamesPlayed = 0;
+        int bowlGames = 18;
+        int played = outcomes.size();
+        
+        for (int i = 0; i < played; i++) {
+            gamesPlayed = ((1 << i) | gamesPlayed);
         }
-        return 0;
+        gamesPlayed = gamesPlayed << (bowlGames-played);
+        return gamesPlayed;
     }
-
+    
     public static void main(String[] args) {
+<<<<<<< .merge_file_a00532
 //        int gamesPlayed = 0b11111110000000000; //mask of games played
 //        int outcomes    = 0b010000000000000000; //1 if spread was covered
         int gamesPlayed = 0b111111111110000000; //mask of games played
         int outcomes =    0b010101110001011100; //1 if spread was covered
+=======
+        int gamesPlayed = 0;
+        int outcomes = 0;
+>>>>>>> .merge_file_a01372
         int bowlGames = 0b111111111111111111;
-
+        
 //here is where we will start parsing the XML and get the number of players
-        Player[] players = new Player[5];
-        for (int i = 0; i < players.length; i++) {
-            players[i] = new Player();
-        }
         //read XML and populate the data objects
-        players[Kyle].name = "Kyle";
-        players[Ryan].name = "Ryan";
-        players[Tyler].name = "Tyler";
-        players[Colby].name = "Colby";
-        players[Dad].name = "Dad";
-
-        players[Kyle].picks = KylePicks;
-        players[Ryan].picks = RyanPicks;
-        players[Tyler].picks = TylerPicks;
-        players[Colby].picks = ColbyPicks;
-        players[Dad].picks = DadPicks;
-
-        players[Kyle].points = KylePoints;
-        players[Ryan].points = RyanPoints;
-        players[Tyler].points = TylerPoints;
-        players[Colby].points = ColbyPoints;
-        players[Dad].points = DadPoints;
+        HashMap<String, HashMap<String,BowlPick>> picksMap = BowlXMLParser.buildPickTable("./src/bowlpicks.xml");
+        HashMap<String, Boolean> resultsMap = BowlXMLParser.buildResultsTable("./src/results.xml");
+        String[] bowls = BowlXMLParser.buildBowlsTable("./src/bowls.xml");
 //done with XML
 
-        for (Player p : players) {
-            p.score = 0;
-            p.wins = 0;
+        String[] playerNames = new String[picksMap.size()];
+        picksMap.keySet().toArray(playerNames);
+        HashMap<String, Player> players = new HashMap();
+        
+        //calculate gamesPlayed mask
+        for (int i = 0; i < resultsMap.size(); i++) {
+            gamesPlayed = ((1 << i) | gamesPlayed);
         }
+        gamesPlayed = gamesPlayed << (bowls.length - resultsMap.size());
+        //done calculating mask
+        
+        //calculate outcomes
+        for (int i = 0; i < bowls.length; i++) {
+            if(resultsMap.get(bowls[i]) != null){
+                if(resultsMap.get(bowls[i]).booleanValue())
+                    outcomes = ((outcomes << 1) | 1);
+                else
+                    outcomes = (outcomes << 1) ;
+            }
+        }
+        outcomes = outcomes << (bowls.length - resultsMap.size());
+        //done calculating outcomes
+        
+        //create all the players
+        for (int i = 0; i < playerNames.length; i++) {
+            Player player = new Player();   
+            players.put(playerNames[i], player);
+        }
+        //done creating players
+        
+        //calculate picks
+        for (Entry<String, HashMap<String,BowlPick>> player : picksMap.entrySet()){
+            int picks = 0;
+            for (int i = 0; i < bowls.length; i++) {
+                if(player.getValue().get(bowls[i]) != null){
+                    if(player.getValue().get(bowls[i]).cover)
+                        picks = ((picks << 1) | 1);
+                    else
+                        picks = (picks << 1) ;
+                }
+            }
+            players.get(player.getKey()).picks = picks;
+        }
+        for (Entry<String, HashMap<String, BowlPick>> player : picksMap.entrySet()){
+            int points[] = new int[bowls.length];
+            for(int i=0; i<bowls.length; i++)
+                points[i] = player.getValue().get(bowls[bowls.length - 1 - i]).weight;
+            players.get(player.getKey()).points = points;
+        }
+        //done calculating picks
+
         for (int i = 0; i <= (~gamesPlayed & bowlGames); i++) {
             int max = 0;
 
-            for (Player p : players) {
-                int winsMask = calWins((i | (gamesPlayed & outcomes)), p.picks);
-                p.score = calcTotal(winsMask, p.points);
+            for (Entry<String, Player> player : players.entrySet()) {
+                int winsMask = calWins((i | (gamesPlayed & outcomes)), player.getValue().picks);
+                player.getValue().score = calcTotal(winsMask, player.getValue().points);
             }
 
-            for (Player p : players) {
-                if (p.score > max) {
-                    max = p.score;
+            for (Entry<String, Player> player : players.entrySet()) {
+                if (player.getValue().score > max) {
+                    max = player.getValue().score;
                 }
             }
 
-            for (Player p : players) {
-                if (p.score == max) {
-                    p.wins++;
+            for (Entry<String, Player> player : players.entrySet()) {
+                if (player.getValue().score == max) {
+                    player.getValue().wins++;
                 }
             }
         }
 
-        for (Player p : players) {
-            System.out.print(p.name + " : ");
+        for (Entry<String, Player> player : players.entrySet()) {
+            System.out.print(player.getKey() + " : ");
             int pos = (~gamesPlayed & bowlGames) + 1;
-            System.out.println(p.wins + " / " + pos);
-            System.out.println(String.format("%.2f", 100.0 * p.wins / pos) + "%");
+            System.out.println(player.getValue().wins + " / " + pos);
+            System.out.println(String.format("%.2f", 100.0 * player.getValue().wins / pos) + "%");
         }
     }
 }
