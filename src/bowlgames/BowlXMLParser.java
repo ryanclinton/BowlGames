@@ -13,16 +13,6 @@ import org.xml.sax.SAXException;
 /**
  * @author Ryan
  */
-class BowlPick {
-
-    int weight;
-    boolean cover;
-
-    @Override
-    public String toString() {
-        return ("Weight:" + weight + " :: Cover:" + cover);
-    }
-}
 
 public class BowlXMLParser {
     private static Document getDocument(String url){
